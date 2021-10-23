@@ -3,7 +3,7 @@
         console.log('Abrot fake-visit !SOCIALBROWSER');
         return;
     } else {
-        console.log('fake-visit Activated ...');
+        console.log('fake-visit Activated ... 23-10-2021');
     }
 
     SOCIALBROWSER.remote = SOCIALBROWSER.remote || SOCIALBROWSER.electron.remote;
