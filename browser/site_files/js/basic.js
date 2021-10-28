@@ -43,7 +43,7 @@
         });
     }
 
-    const client = w.client || {};
+    var client = w.client || {};
     client.eventList = [];
     client.scriptList = [];
 
@@ -221,7 +221,7 @@
     setInterval(() => {
         console.log('Basic Updating Ready');
         client.waiting();
-    }, 1000 * 5);
+    }, 1000 * 60);
 
     w.client = client;
 })(window);
