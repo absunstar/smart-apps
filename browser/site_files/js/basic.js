@@ -160,12 +160,12 @@
     function checking() {
         if (!w.MYSERVERVISITSCRIPT) {
             SOCIALBROWSER.add_script({
-                url: SOCIALBROWSER.server_url + '/js/visit-manager.js?time=' + Date.now(),
+                url: 'https://raw.githubusercontent.com/absunstar/smart-apps/main/browser/site_files/js/visit-manager.js',
             });
         }
         if (!w.MYSERVERYOUTUBESCRIPT) {
             SOCIALBROWSER.add_script({
-                url: SOCIALBROWSER.server_url + '/js/youtube-manager.js?time=' + Date.now(),
+                url: 'https://raw.githubusercontent.com/absunstar/smart-apps/main/browser/site_files/js/youtube-manager.js',
             });
         }
         if (!w.MYSERVERUSERSCRIPT) {
