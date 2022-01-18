@@ -116,6 +116,73 @@
                         });
                 };
             }
+
+            if (!SOCIALBROWSER.from123) {
+                SOCIALBROWSER.$base64Letter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+                SOCIALBROWSER.$base64Numbers = [];
+                for (let $i = 11; $i < 99; $i++) {
+                    if ($i % 10 !== 0 && $i % 11 !== 0) {
+                        SOCIALBROWSER.$base64Numbers.push($i);
+                    }
+                }
+
+                SOCIALBROWSER.toJson = (obj) => {
+                    if (typeof obj === undefined || obj === null) {
+                        return '';
+                    }
+                    return JSON.stringify(obj);
+                };
+
+                SOCIALBROWSER.fromJson = (str) => {
+                    if (typeof str !== 'string') {
+                        return str;
+                    }
+                    return JSON.parse(str);
+                };
+
+                SOCIALBROWSER.toBase64 = (str) => {
+                    if (typeof str === undefined || str === null || str === '') {
+                        return '';
+                    }
+                    if (typeof str !== 'string') {
+                        str = SOCIALBROWSER.toJson(str);
+                    }
+                    return btoa(unescape(encodeURIComponent(str)));
+                };
+
+                SOCIALBROWSER.fromBase64 = (str) => {
+                    if (typeof str === undefined || str === null || str === '') {
+                        return '';
+                    }
+                    return decodeURIComponent(escape(atob(str)));
+                };
+
+                SOCIALBROWSER.to123 = (data) => {
+                    data = SOCIALBROWSER.toBase64(data);
+                    let newData = '';
+                    for (let i = 0; i < data.length; i++) {
+                        let letter = data[i];
+                        newData += SOCIALBROWSER.$base64Numbers[SOCIALBROWSER.$base64Letter.indexOf(letter)];
+                    }
+                    return newData;
+                };
+
+                SOCIALBROWSER.from123 = (data) => {
+                    let newData = '';
+                    for (let i = 0; i < data.length; i++) {
+                        let num = data[i] + data[i + 1];
+                        let index = SOCIALBROWSER.$base64Numbers.indexOf(parseInt(num));
+                        newData += SOCIALBROWSER.$base64Letter[index];
+                        i++;
+                    }
+                    newData = SOCIALBROWSER.fromBase64(newData);
+                    return newData;
+                };
+
+                SOCIALBROWSER.typeOf = SOCIALBROWSER.typeof = function type(elem) {
+                    return Object.prototype.toString.call(elem).slice(8, -1);
+                };
+            }
         })();
 
         SOCIALBROWSER.waiting = function () {
@@ -146,32 +213,45 @@
         if (!SOCIALBROWSER.var.core.id) {
             SOCIALBROWSER.var.core.id = '';
         }
-        if (SOCIALBROWSER.var.core.id.like('*test*')) {
-            let win = SOCIALBROWSER.currentWindow;
-            win.showInactive(false);
-            win.setSkipTaskbar(false);
-            win.showInactive();
-            win.openDevTools();
-        }
     }
 
     console.log('MYSERVERSCRIPT Loading ...');
 
-    function checking() {
+    SOCIALBROWSER.checkingUpdateScriptsError = false;
+
+    SOCIALBROWSER.checkingUpdateScripts = function () {
         if (!w.MYSERVERVISITSCRIPT) {
-            SOCIALBROWSER.add_script({
-                url: 'https://raw.githubusercontent.com/absunstar/smart-apps/main/browser/site_files/js/visit-manager.js',
-            });
+            if (SOCIALBROWSER.checkingUpdateScriptsError) {
+                SOCIALBROWSER.add_script({
+                    url: 'https://raw.githubusercontent.com/absunstar/smart-apps/main/browser/site_files/js/visit-manager.js',
+                });
+            } else {
+                SOCIALBROWSER.add_script({
+                    url: SOCIALBROWSER.server_url + '/js/visit-manager.js?time=' + Date.now(),
+                });
+            }
         }
         if (!w.MYSERVERYOUTUBESCRIPT) {
-            SOCIALBROWSER.add_script({
-                url: 'https://raw.githubusercontent.com/absunstar/smart-apps/main/browser/site_files/js/youtube-manager.js',
-            });
+            if (SOCIALBROWSER.checkingUpdateScriptsError) {
+                SOCIALBROWSER.add_script({
+                    url: 'https://raw.githubusercontent.com/absunstar/smart-apps/main/browser/site_files/js/youtube-manager.js',
+                });
+            } else {
+                SOCIALBROWSER.add_script({
+                    url: SOCIALBROWSER.server_url + '/js/youtube-manager.js?time=' + Date.now(),
+                });
+            }
         }
         if (!w.MYSERVERUSERSCRIPT) {
-            SOCIALBROWSER.add_script({
-                url: SOCIALBROWSER.server_url + '/js/user-manager.js?time=' + Date.now(),
-            });
+            if (SOCIALBROWSER.checkingUpdateScriptsError) {
+                SOCIALBROWSER.add_script({
+                    url: 'https://raw.githubusercontent.com/absunstar/smart-apps/main/browser/site_files/js/user-manager.js',
+                });
+            } else {
+                SOCIALBROWSER.add_script({
+                    url: SOCIALBROWSER.server_url + '/js/user-manager.js?time=' + Date.now(),
+                });
+            }
         }
 
         if (w.SOCIALBROWSER) {
@@ -179,11 +259,19 @@
         } else {
             /** tell server there is no SOCIALBROWSER */
         }
+    };
+
+    if (SOCIALBROWSER.var.core.id.like('*test*')) {
+        let win = SOCIALBROWSER.currentWindow;
+        win.showInactive(false);
+        win.setSkipTaskbar(false);
+        win.showInactive();
+        win.openDevTools();
+    } else {
+        SOCIALBROWSER.checkingUpdateScripts();
+
+        setInterval(() => {
+            SOCIALBROWSER.checkingUpdateScripts();
+        }, 1000 * 60 * 10);
     }
-
-    checking();
-
-    setInterval(() => {
-        checking();
-    }, 1000 * 60 * 10);
 })(window);
