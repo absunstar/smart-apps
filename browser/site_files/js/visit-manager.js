@@ -11,7 +11,7 @@
     isTest: SOCIALBROWSER.var.core.id.like('*test*'),
     currentIndex: -1,
     sleep: 1000 * 60 * 10,
-    visitOptions: { show: false, timeout: 1000 * 60 * 5, url: 'https://egytag.com/', host: 'egytag.com', referer: 'dynamic', proxy: null, partition: null, scroll: true, count: 1 },
+    visitOptions: { show: false, timeout: 1000 * 60 * 5, url: 'https://egytag.com/', referer: 'dynamic', proxy: null, partition: null, scroll: true, count: 1 },
     trackingList: [],
     visitList: [
       { url: 'https://egytag.com/post/random', timeout: 1000 * 60 * 10 },
@@ -401,7 +401,9 @@ if (SOCIALBROWSER.fakeview.referer && SOCIALBROWSER.fakeview.referer.url) {
     referer_hostname = SOCIALBROWSER.url.parse(SOCIALBROWSER.fakeview.referer.url).hostname;
     url_hostname = SOCIALBROWSER.url.parse(SOCIALBROWSER.fakeview.url).hostname;
 }
-if (referer_hostname && document.location.hostname.contains(referer_hostname) && !document.location.hostname.contains(url_hostname)) {
+if (SOCIALBROWSER.fakeview.hostname && !document.location.hostname.contains(SOCIALBROWSER.fakeview.hostname)) {
+    fnn = __document__ready__1;
+}else if (referer_hostname && document.location.hostname.contains(referer_hostname) && !document.location.hostname.contains(url_hostname)) {
     fnn = __document__ready__1;
 } else {
     fnn = __document__ready__2;
@@ -708,7 +710,7 @@ if (document.readyState !== 'loading') {
     }
 }
 `;
-    }else if (op.url.like('*safestgatetocontent.com*')) {
+    } else if (op.url.like('*safestgatetocontent.com*')) {
       code2 = `function __document__ready__2() {
   if (true) {
     SOCIALBROWSER.log(' ');
@@ -875,6 +877,13 @@ if (document.readyState !== 'loading') {
       console.log('visit-manager.js :  will-download ');
     });
 
+    win.webContents.session.setPermissionRequestHandler((webContents, permission, callback) => {
+      callback(false);
+    });
+    win.webContents.session.setPermissionCheckHandler((webContents, permission) => {
+      return false;
+    });
+    
     if (win.webContents.setWindowOpenHandler) {
       win.webContents.setWindowOpenHandler(({ url, frameName }) => {
         return { action: 'deny' };
