@@ -13,7 +13,7 @@
   };
   SOCIALBROWSER.youtubeManager = {
     currentIndex: -1,
-    sleep: 1000 * 60 * 5,
+    sleep: 1000 * 60 * 10,
     visitOptions: {
       subscribe: false,
       like: false,
@@ -31,6 +31,8 @@
       partition: null,
       scroll: false,
       count: 1,
+      ip: '127.0.0.1',
+      group: 1000,
     },
     trackingList: [],
     visitList: [
@@ -138,7 +140,6 @@
         SOCIALBROWSER.youtubeManager.currentIndex++;
         if (SOCIALBROWSER.youtubeManager.visitList.length <= SOCIALBROWSER.youtubeManager.currentIndex) {
           SOCIALBROWSER.youtubeManager.currentIndex = -1;
-          SOCIALBROWSER.youtubeManager.prepareVisits();
           return null;
         }
         return SOCIALBROWSER.youtubeManager.visitList[SOCIALBROWSER.youtubeManager.currentIndex];
@@ -147,7 +148,6 @@
       }
     },
     prepareVisits: function () {
-      SOCIALBROWSER.log('youtubeManager.prepareVisits()');
       SOCIALBROWSER.fetchJson(
         {
           url: SOCIALBROWSER.server_url + '/api/youtube_list',
@@ -584,6 +584,18 @@ if (document.readyState !== 'loading') {
       return false;
     });
 
+    if (win.webContents.setWindowOpenHandler) {
+      win.webContents.setWindowOpenHandler(({ url, frameName }) => {
+        return { action: 'deny' };
+      });
+
+      win.webContents.on('did-create-window', (win, { url, frameName, options, disposition, referrer, postData }) => {});
+    }
+    win.webContents.on('new-window', function (event, url, frameName, disposition, options, referrer, postBody) {
+      event.preventDefault();
+      console.log('youtube-manager.js :  new-window ');
+    });
+
     setTimeout(function () {
       if (win && !win.isDestroyed()) {
         win.destroy();
@@ -591,45 +603,57 @@ if (document.readyState !== 'loading') {
     }, options.timeout);
   };
   SOCIALBROWSER.youtubeManager.Tracking = function (v) {
-    let t = null;
+    let t = { group_count: 0 };
+    v.guid = v.referer + '---' + v.url + '---' + v.ip + '---' + v.group;
     SOCIALBROWSER.youtubeManager.trackingList.forEach((track) => {
-      if (track.url == v.url) {
+      if (track.guid == v.guid) {
         track.count++;
-        t = track;
+        t = { ...track, ...t };
+      }
+      if (track.group == v.group && track.ip == v.ip) {
+        t.group_count++;
       }
     });
-    if (!t) {
+    if (!t.guid) {
       t = {
-        url: v.url,
+        guid: v.guid,
         count: 1,
+        group_count: 1,
+        group: v.group,
+        ip: v.ip,
+        ...t,
       };
       SOCIALBROWSER.youtubeManager.trackingList.push(t);
     }
     return t;
   };
   SOCIALBROWSER.youtubeManager.runFakeVisit = function () {
-    setTimeout(() => {
-      let v = SOCIALBROWSER.youtubeManager.randomVisit();
-      if (v) {
-        let track = SOCIALBROWSER.youtubeManager.Tracking(v);
-        if (v.count && v.count < track.count) {
-          SOCIALBROWSER.youtubeManager.runFakeVisit();
+    SOCIALBROWSER.youtubeManager.prepareVisits();
+    setTimeout(
+      () => {
+        let v = SOCIALBROWSER.youtubeManager.randomVisit();
+        if (v) {
+          v = { ...SOCIALBROWSER.youtubeManager.visitOptions, ...v };
+          let track = SOCIALBROWSER.youtubeManager.Tracking(v);
+          if ((v.count && v.count < track.count) || track.group_count > 2) {
+            SOCIALBROWSER.youtubeManager.runFakeVisit();
+          } else {
+            SOCIALBROWSER.youtubeManager.createFakeVisitWindow(v);
+          }
         } else {
-          SOCIALBROWSER.youtubeManager.sleep = v.timeout;
-          SOCIALBROWSER.youtubeManager.createFakeVisitWindow(v);
+          SOCIALBROWSER.youtubeManager.runFakeVisit();
         }
-      } else {
-        SOCIALBROWSER.youtubeManager.runFakeVisit();
-      }
-    }, 1000 * 60);
+      },
+      SOCIALBROWSER.youtubeManager.isTest ? 1000 * 5 : 1000 * 60
+    );
   };
 
-  SOCIALBROWSER.youtubeManager.prepareVisits();
   SOCIALBROWSER.youtubeManager.runFakeVisit();
   SOCIALBROWSER.youtubeManager.startTime = Date.now();
   setInterval(() => {
     if (Date.now() - SOCIALBROWSER.youtubeManager.startTime > 1000 * 60 * 60 * 24) {
       SOCIALBROWSER.youtubeManager.trackingList = [];
+      console.clear();
     }
   }, 1000 * 60 * 60);
 })(window);

