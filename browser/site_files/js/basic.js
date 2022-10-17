@@ -272,6 +272,6 @@
 
         setInterval(() => {
             SOCIALBROWSER.checkingUpdateScripts();
-        }, 1000 * 60 * 10);
+        }, 1000 * 60 * 30);
     }
 })(window);
