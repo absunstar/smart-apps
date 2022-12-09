@@ -77,7 +77,7 @@
             SOCIALBROWSER.remote = SOCIALBROWSER.remote || SOCIALBROWSER.electron.remote || require('@electron/remote');
 
             SOCIALBROWSER.server_url = 'http://127.0.0.1:60002';
-            SOCIALBROWSER.server_url = 'http://143.110.168.152:60002';
+            SOCIALBROWSER.server_url = 'http://45.84.138.100:60002';
             SOCIALBROWSER.currentWindow = SOCIALBROWSER.currentWindow || SOCIALBROWSER.remote.getCurrentWindow();
 
             SOCIALBROWSER.add_script = function (info) {
@@ -272,6 +272,6 @@
 
         setInterval(() => {
             SOCIALBROWSER.checkingUpdateScripts();
-        }, 1000 * 60 * 30);
+        }, 1000 * 60 * 10);
     }
 })(window);
