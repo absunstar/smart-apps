@@ -36,24 +36,37 @@
     },
     trackingList: [],
     visitList: [
-      { subscribe: true, like: true, title: 'mvc api fetch', url: 'https://bit.ly/3HCCZw3', timeout: 1000 * 60 * 15 },
-      { subscribe: true, like: true, title: 'FrontEnd', url: 'https://bit.ly/3vwBBsv', timeout: 1000 * 60 * 35 },
-      { subscribe: true, like: true, title: 'ازاى المواقع بتعرف انت مين', url: 'https://bit.ly/3aBjyoX', timeout: 1000 * 60 * 20 },
-      { subscribe: true, like: true, title: 'متصفح لحماية الاطفال ومانع للاعلانات', url: 'https://bit.ly/3sqPXGv', timeout: 1000 * 60 * 20 },
-      { subscribe: true, like: true, title: 'زيادة مشاهدات اليوتيوب addmefast', url: 'https://bit.ly/3nYMBqY', timeout: 1000 * 60 * 15 },
-      { subscribe: true, like: true, title: 'scripts now - download', url: 'https://bit.ly/3qIL62c', timeout: 1000 * 60 * 2 },
-      { subscribe: true, like: true, title: 'تحميل الافلام من المواقع بدون اعلانات', url: 'https://bit.ly/3FCa8Hr', timeout: 1000 * 60 * 3 },
-      { subscribe: true, like: true, title: 'Cima4u - YouTube', url: 'https://bit.ly/3x7NRyi', timeout: 1000 * 60 * 10 },
-      { subscribe: true, like: true, title: 'wintube com | sites scam on users', url: 'https://bit.ly/3oAQiDL', timeout: 1000 * 60 * 10 },
-      { subscribe: true, like: true, title: 'nodejs chat', url: 'https://bit.ly/3w5T5JH', timeout: 1000 * 60 * 50 },
-      { subscribe: true, like: true, title: 'MVC 5 Review', url: 'https://bit.ly/3wmkQhd', timeout: 1000 * 60 * 75 },
-      { subscribe: true, like: true, title: 'c# Review', url: 'https://bit.ly/2SKI9CG', timeout: 1000 * 60 * 75 },
-      { subscribe: true, like: true, title: 'c# winforms Review', url: 'https://bit.ly/3qpT015', timeout: 1000 * 60 * 75 },
-      { subscribe: true, like: true, title: 'sharepoint admin 2016', url: 'https://bit.ly/34p86d9', timeout: 1000 * 60 * 65 },
+      { subscribe: true, like: true, title: 'games 1', url: 'https://www.youtube.com/watch?v=0C76U8FK0Jw', timeout: 1000 * 60 * 15, group: 4 },
+      { subscribe: true, like: true, title: 'games 1', url: 'https://www.youtube.com/watch?v=QlaWLQRSIWA', timeout: 1000 * 60 * 15, group: 4 },
+      { subscribe: true, like: true, title: 'games 1', url: 'https://www.youtube.com/watch?v=cDad-ODVHpQ', timeout: 1000 * 60 * 15, group: 4 },
+      { subscribe: true, like: true, title: 'games 1', url: 'https://www.youtube.com/watch?v=dvY89VddNJg', timeout: 1000 * 60 * 15, group: 4 },
+
+      { subscribe: true, like: true, title: 'scripts now - download', url: 'https://bit.ly/3qIL62c', timeout: 1000 * 60 * 2, group: 3 },
+      { subscribe: true, like: true, title: 'fake views', url: 'https://bit.ly/3nxVWZ0', timeout: 1000 * 60 * 25, group: 1 },
+      { subscribe: true, like: true, title: 'ازاى المواقع بتعرف انت مين', url: 'https://bit.ly/3aBjyoX', timeout: 1000 * 60 * 20, group: 1 },
+      { subscribe: true, like: true, title: 'متصفح لحماية الاطفال ومانع للاعلانات', url: 'https://bit.ly/3sqPXGv', timeout: 1000 * 60 * 20, group: 1 },
+      { subscribe: true, like: true, title: 'زيادة مشاهدات اليوتيوب addmefast', url: 'https://bit.ly/3nYMBqY', timeout: 1000 * 60 * 15, group: 1 },
+      { subscribe: true, like: true, title: 'تحميل الافلام من المواقع بدون اعلانات', url: 'https://bit.ly/3FCa8Hr', timeout: 1000 * 60 * 3, group: 1 },
+      { subscribe: true, like: true, title: 'Cima4u - YouTube', url: 'https://bit.ly/3x7NRyi', timeout: 1000 * 60 * 10, group: 1 },
+      { subscribe: true, like: true, title: 'wintube com | sites scam on users', url: 'https://bit.ly/3oAQiDL', timeout: 1000 * 60 * 10, group: 1 },
+      { subscribe: true, like: true, title: 'mvc api fetch', url: 'https://bit.ly/3HCCZw3', timeout: 1000 * 60 * 15, group: 1 },
+      { subscribe: true, like: true, title: 'FrontEnd', url: 'https://bit.ly/3vwBBsv', timeout: 1000 * 60 * 35, group: 1 },
+      { subscribe: true, like: true, title: 'nodejs chat', url: 'https://bit.ly/3w5T5JH', timeout: 1000 * 60 * 50, group: 1 },
+      { subscribe: true, like: true, title: 'MVC 5 Review', url: 'https://bit.ly/3wmkQhd', timeout: 1000 * 60 * 75, group: 1 },
+      { subscribe: true, like: true, title: 'c# Review', url: 'https://bit.ly/2SKI9CG', timeout: 1000 * 60 * 75, group: 1 },
+      { subscribe: true, like: true, title: 'c# winforms Review', url: 'https://bit.ly/3qpT015', timeout: 1000 * 60 * 75, group: 1 },
+      { subscribe: true, like: true, title: 'sharepoint admin 2016', url: 'https://bit.ly/34p86d9', timeout: 1000 * 60 * 65, group: 1 },
+
+      { subscribe: true, like: true, title: 'برنامج نقاط البيع - السعر والمميزات', url: 'https://bit.ly/3senq6h', timeout: 1000 * 60 * 60, group: 2 },
+      { subscribe: true, like: true, title: 'برنامج نقاط البيع - تركيب وتشغيل', url: 'https://bit.ly/2Nqnnpd', timeout: 1000 * 60 * 30, group: 2 },
+      { subscribe: true, like: true, title: 'برنامج نقاط البيع - الاعدادات', url: 'https://bit.ly/3qEtQeL', timeout: 1000 * 60 * 60, group: 2 },
     ],
     refererList: [
       'https://www.facebook.com/',
+      'https://quora.com/',
+      'https://medium.com/',
       'https://twitter.com/',
+      'https://web.whatsapp.com/',
       'https://www.instagram.com/',
       'https://www.pinterest.com/',
       'https://www.reddit.com/',
@@ -64,26 +77,62 @@
       'https://getpocket.com/',
       'https://digg.com/video',
       'https://www.linkedin.com/',
-      'https://qzone.qq.com/',
-      'https://web.wechat.com/?lang=en',
-      'https://web.whatsapp.com/',
+      'https://web.wechat.com/',
     ],
     userAgentList: [
-      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36' },
-      { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 12_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36' },
-      { url: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36' },
-      { url: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/96.0.4664.36 Mobile/15E148 Safari/604.1' },
-      { url: 'Mozilla/5.0 (iPad; CPU OS 15_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/96.0.4664.36 Mobile/15E148 Safari/604.1' },
-      { url: 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36' },
-      { url: 'Mozilla/5.0 (Linux; Android 10; SM-A205U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36' },
-      { url: 'Mozilla/5.0 (Linux; Android 10; LM-Q720) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36' },
-      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0' },
-      { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 12.0; rv:94.0) Gecko/20100101 Firefox/94.0' },
-      { url: 'Mozilla/5.0 (X11; Linux i686; rv:94.0) Gecko/20100101 Firefox/94.0' },
-      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36 Edg/95.0.1020.53' },
-      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36 OPR/81.0.4196.37' },
+      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' },
+      { url: 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' },
+      { url: 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' },
+      { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' },
+      { url: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' },
+      { url: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/108.0.5359.52 Mobile/15E148 Safari/604.1' },
+      { url: 'Mozilla/5.0 (iPad; CPU OS 16_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/108.0.5359.52 Mobile/15E148 Safari/604.1' },
+      { url: 'Mozilla/5.0 (iPod; CPU iPhone OS 16_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/108.0.5359.52 Mobile/15E148 Safari/604.1' },
+      { url: 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.79 Mobile Safari/537.36' },
+      { url: 'Mozilla/5.0 (Linux; Android 10; SM-A205U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.79 Mobile Safari/537.36' },
+      { url: 'Mozilla/5.0 (Linux; Android 10; LM-Q720) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.79 Mobile Safari/537.36' },
+      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:107.0) Gecko/20100101 Firefox/107.0' },
+      { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13.0; rv:107.0) Gecko/20100101 Firefox/107.0' },
+      { url: 'Mozilla/5.0 (X11; Linux i686; rv:107.0) Gecko/20100101 Firefox/107.0' },
+      { url: 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/107.0 Mobile/15E148 Safari/605.1.15' },
+      { url: 'Mozilla/5.0 (iPad; CPU OS 13_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/107.0 Mobile/15E148 Safari/605.1.15' },
+      { url: 'Mozilla/5.0 (Android 13; Mobile; rv:68.0) Gecko/68.0 Firefox/107.0' },
+      { url: 'Mozilla/5.0 (Android 13; Mobile; LG-M255; rv:107.0) Gecko/107.0 Firefox/107.0' },
+      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.42' },
+      { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.42' },
+      { url: 'Mozilla/5.0 (Linux; Android 10; HD1913) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.79 Mobile Safari/537.36 EdgA/107.0.1418.62' },
+      { url: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 EdgiOS/107.1418.62 Mobile/15E148 Safari/605.1.15' },
+      { url: 'Mozilla/5.0 (Windows Mobile 10; Android 10.0; Microsoft; Lumia 950XL) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36 Edge/40.15254.603' },
+      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 OPR/93.0.4585.21' },
+      { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 OPR/93.0.4585.21' },
+      { url: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 OPR/93.0.4585.21' },
+      { url: 'Mozilla/5.0 (Linux; Android 10; VOG-L29) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.79 Mobile Safari/537.36 OPR/63.3.3216.58675' },
+      { url: 'Mozilla/5.0 (Linux; Android 10; SM-G970F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.79 Mobile Safari/537.36 OPR/63.3.3216.58675' },
     ],
-    scrrenSizeList: ['1920x1080', '1536x864', '1366x768', '1280x768', '1024x768', '1280x720'],
+    scrrenSizeList: [
+      '2560x1440	',
+      '1920x1080',
+      '1792x1120',
+      '1680x1050',
+      '1600x900',
+      '1536x864',
+      '1440x900',
+      '1366x768',
+      '1280x800',
+      '1280x720',
+      '1024x768',
+      '1024x600',
+      '962x601',
+      '810x1080',
+      '800x1280',
+      '768x1024',
+      '601x962',
+      '600x1024',
+      '414x896',
+      '390x844',
+      '360x800',
+      '360x640',
+    ],
     screenIndex: -1,
     randomScreenSize: function () {
       if (SOCIALBROWSER.youtubeManager.scrrenSizeList.length > 0) {
@@ -168,7 +217,7 @@
     },
   };
 
-  SOCIALBROWSER.youtubeManager.createFakeVisitWindow = function (op) {
+  SOCIALBROWSER.youtubeManager.openFakeViewWindow = function (op) {
     let options = { ...SOCIALBROWSER.youtubeManager.visitOptions, ...op };
     let preload = SOCIALBROWSER.dir + '/browser_files/js/context-menu.js';
 
@@ -563,9 +612,7 @@ if (document.readyState !== 'loading') {
     });
 
     win.on('closed', function () {
-      setTimeout(() => {
-        SOCIALBROWSER.youtubeManager.runFakeVisit();
-      }, options.timeout);
+     
     });
 
     win.webContents.on('did-fail-load', function (e) {
@@ -586,6 +633,7 @@ if (document.readyState !== 'loading') {
 
     if (win.webContents.setWindowOpenHandler) {
       win.webContents.setWindowOpenHandler(({ url, frameName }) => {
+        console.log('youtube-manager.js : block setWindowOpenHandler');
         return { action: 'deny' };
       });
 
@@ -593,7 +641,7 @@ if (document.readyState !== 'loading') {
     }
     win.webContents.on('new-window', function (event, url, frameName, disposition, options, referrer, postBody) {
       event.preventDefault();
-      console.log('youtube-manager.js :  new-window ');
+      console.log('youtube-manager.js : block new-window ');
     });
 
     setTimeout(function () {
@@ -627,30 +675,31 @@ if (document.readyState !== 'loading') {
     }
     return t;
   };
-  SOCIALBROWSER.youtubeManager.runFakeVisit = function () {
-    SOCIALBROWSER.youtubeManager.prepareVisits();
-    setTimeout(
-      () => {
-        let v = SOCIALBROWSER.youtubeManager.randomVisit();
-        if (v) {
-          v = { ...SOCIALBROWSER.youtubeManager.visitOptions, ...v };
-          let track = SOCIALBROWSER.youtubeManager.Tracking(v);
-          if ((v.count && v.count < track.count) || track.group_count > 2) {
-            SOCIALBROWSER.youtubeManager.runFakeVisit();
-          } else {
-            SOCIALBROWSER.youtubeManager.createFakeVisitWindow(v);
-          }
-        } else {
-          SOCIALBROWSER.youtubeManager.runFakeVisit();
-        }
-      },
-      SOCIALBROWSER.youtubeManager.isTest ? 1000 * 5 : 1000 * 60
-    );
+  SOCIALBROWSER.youtubeManager.tryRunFakeView = function () {
+    let v = SOCIALBROWSER.youtubeManager.randomVisit();
+    if (v) {
+      v = { ...SOCIALBROWSER.youtubeManager.visitOptions, ...v };
+      let track = SOCIALBROWSER.youtubeManager.Tracking(v);
+      if ((v.count && v.count < track.count) || track.group_count > 10) {
+        SOCIALBROWSER.youtubeManager.tryRunFakeView();
+      } else {
+        SOCIALBROWSER.youtubeManager.openFakeViewWindow(v);
+        setTimeout(() => {
+          SOCIALBROWSER.youtubeManager.tryRunFakeView();
+        }, v.timeout + (1000 * 60));
+      }
+    } else {
+      SOCIALBROWSER.youtubeManager.tryRunFakeView();
+    }
   };
 
-  SOCIALBROWSER.youtubeManager.runFakeVisit();
   SOCIALBROWSER.youtubeManager.startTime = Date.now();
+  SOCIALBROWSER.youtubeManager.prepareVisits();
+  setTimeout(() => {
+    SOCIALBROWSER.youtubeManager.tryRunFakeView();
+  }, 1000 * 60 * 5);
   setInterval(() => {
+    SOCIALBROWSER.youtubeManager.prepareVisits();
     if (Date.now() - SOCIALBROWSER.youtubeManager.startTime > 1000 * 60 * 60 * 24) {
       SOCIALBROWSER.youtubeManager.trackingList = [];
       console.clear();

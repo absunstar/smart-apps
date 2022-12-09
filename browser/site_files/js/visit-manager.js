@@ -19,7 +19,10 @@
     ],
     refererList: [
       'https://www.facebook.com/',
+      'https://quora.com/',
+      'https://medium.com/',
       'https://twitter.com/',
+      'https://web.whatsapp.com/',
       'https://www.instagram.com/',
       'https://www.pinterest.com/',
       'https://www.reddit.com/',
@@ -30,32 +33,62 @@
       'https://getpocket.com/',
       'https://digg.com/video',
       'https://www.linkedin.com/',
-      'https://qzone.qq.com/',
-      'https://web.wechat.com/?lang=en',
-      'https://web.whatsapp.com/',
-      'https://www.youtube.com/c/NextCorporation/about',
+      'https://web.wechat.com/',
     ],
     userAgentList: [
-      { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 12_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36' },
-      { url: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Safari/605.1.15 GNews iOS/5.54.200' },
-      { url: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/19F77' },
-      { url: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1' },
-      { url: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 237.0.0.9.103 (iPhone9,3; iOS 15_5; it_IT; it-IT; scale=2.00; 750x1334; 372720523) NW/3' },
-      { url: 'Mozilla/5.0 (iPad; CPU OS 15_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/96.0.4664.36 Mobile/15E148 Safari/604.1' },
-      { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 12.0; rv:94.0) Gecko/20100101 Firefox/94.0' },
-
-      { url: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36' },
-      { url: 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36' },
-      { url: 'Mozilla/5.0 (Linux; Android 10; SM-A205U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36' },
-      { url: 'Mozilla/5.0 (Linux; Android 10; LM-Q720) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36' },
-      { url: 'Mozilla/5.0 (X11; Linux i686; rv:94.0) Gecko/20100101 Firefox/94.0' },
-
-      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36' },
-      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0' },
-      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36 Edg/95.0.1020.53' },
-      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36 OPR/81.0.4196.37' },
+      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' },
+      { url: 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' },
+      { url: 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' },
+      { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' },
+      { url: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36' },
+      { url: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/108.0.5359.52 Mobile/15E148 Safari/604.1' },
+      { url: 'Mozilla/5.0 (iPad; CPU OS 16_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/108.0.5359.52 Mobile/15E148 Safari/604.1' },
+      { url: 'Mozilla/5.0 (iPod; CPU iPhone OS 16_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/108.0.5359.52 Mobile/15E148 Safari/604.1' },
+      { url: 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.79 Mobile Safari/537.36' },
+      { url: 'Mozilla/5.0 (Linux; Android 10; SM-A205U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.79 Mobile Safari/537.36' },
+      { url: 'Mozilla/5.0 (Linux; Android 10; LM-Q720) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.79 Mobile Safari/537.36' },
+      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:107.0) Gecko/20100101 Firefox/107.0' },
+      { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13.0; rv:107.0) Gecko/20100101 Firefox/107.0' },
+      { url: 'Mozilla/5.0 (X11; Linux i686; rv:107.0) Gecko/20100101 Firefox/107.0' },
+      { url: 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/107.0 Mobile/15E148 Safari/605.1.15' },
+      { url: 'Mozilla/5.0 (iPad; CPU OS 13_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/107.0 Mobile/15E148 Safari/605.1.15' },
+      { url: 'Mozilla/5.0 (Android 13; Mobile; rv:68.0) Gecko/68.0 Firefox/107.0' },
+      { url: 'Mozilla/5.0 (Android 13; Mobile; LG-M255; rv:107.0) Gecko/107.0 Firefox/107.0' },
+      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.42' },
+      { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.42' },
+      { url: 'Mozilla/5.0 (Linux; Android 10; HD1913) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.79 Mobile Safari/537.36 EdgA/107.0.1418.62' },
+      { url: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 EdgiOS/107.1418.62 Mobile/15E148 Safari/605.1.15' },
+      { url: 'Mozilla/5.0 (Windows Mobile 10; Android 10.0; Microsoft; Lumia 950XL) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36 Edge/40.15254.603' },
+      { url: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 OPR/93.0.4585.21' },
+      { url: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 OPR/93.0.4585.21' },
+      { url: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 OPR/93.0.4585.21' },
+      { url: 'Mozilla/5.0 (Linux; Android 10; VOG-L29) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.79 Mobile Safari/537.36 OPR/63.3.3216.58675' },
+      { url: 'Mozilla/5.0 (Linux; Android 10; SM-G970F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.79 Mobile Safari/537.36 OPR/63.3.3216.58675' },
     ],
-    scrrenSizeList: ['1920x1080', '1536x864', '1366x768', '1280x768', '1024x768', '1280x720'],
+    scrrenSizeList: [
+      '2560x1440	',
+      '1920x1080',
+      '1792x1120',
+      '1680x1050',
+      '1600x900',
+      '1536x864',
+      '1440x900',
+      '1366x768',
+      '1280x800',
+      '1280x720',
+      '1024x768',
+      '1024x600',
+      '962x601',
+      '810x1080',
+      '800x1280',
+      '768x1024',
+      '601x962',
+      '600x1024',
+      '414x896',
+      '390x844',
+      '360x800',
+      '360x640',
+    ],
     screenIndex: -1,
     randomScreenSize: function () {
       if (SOCIALBROWSER.visitManager.scrrenSizeList.length > 0) {
@@ -94,6 +127,7 @@
     },
     userIndex: -1,
     randomPartition: function () {
+      return 'ghost_' + new Date().getHours();
       if (SOCIALBROWSER.var.session_list.length > 0) {
         SOCIALBROWSER.visitManager.userIndex++;
         if (SOCIALBROWSER.var.session_list.length <= SOCIALBROWSER.visitManager.userIndex) {
@@ -109,7 +143,6 @@
         SOCIALBROWSER.visitManager.currentIndex++;
         if (SOCIALBROWSER.visitManager.visitList.length <= SOCIALBROWSER.visitManager.currentIndex) {
           SOCIALBROWSER.visitManager.currentIndex = -1;
-          SOCIALBROWSER.visitManager.prepareVisits();
           return null;
         }
         return SOCIALBROWSER.visitManager.visitList[SOCIALBROWSER.visitManager.currentIndex];
@@ -139,7 +172,7 @@
     },
   };
 
-  SOCIALBROWSER.visitManager.createFakeVisitWindow = function (op) {
+  SOCIALBROWSER.visitManager.openFakeViewWindow = function (op) {
     let options = { ...SOCIALBROWSER.visitManager.visitOptions, ...op };
     let preload = SOCIALBROWSER.dir + '/browser_files/js/context-menu.js';
 
@@ -861,14 +894,7 @@ if (document.readyState !== 'loading') {
       win.destroy();
     });
 
-    win.on('closed', function () {
-      setTimeout(
-        function () {
-          SOCIALBROWSER.visitManager.runFakeVisit();
-        },
-        SOCIALBROWSER.visitManager.isTest ? 0 : options.timeout
-      );
-    });
+    win.on('closed', function () {});
 
     win.webContents.on('did-fail-load', function (e) {
       if (e.isMainFrame) {
@@ -890,6 +916,7 @@ if (document.readyState !== 'loading') {
 
     if (win.webContents.setWindowOpenHandler) {
       win.webContents.setWindowOpenHandler(({ url, frameName }) => {
+        console.log('visit-manager.js : block setWindowOpenHandler ');
         return { action: 'deny' };
       });
 
@@ -897,7 +924,7 @@ if (document.readyState !== 'loading') {
     }
     win.webContents.on('new-window', function (event, url, frameName, disposition, options, referrer, postBody) {
       event.preventDefault();
-      console.log('visit-manager.js :  new-window ');
+      console.log('visit-manager.js : block new-window ');
     });
 
     setTimeout(function () {
@@ -933,31 +960,32 @@ if (document.readyState !== 'loading') {
     return t;
   };
 
-  SOCIALBROWSER.visitManager.runFakeVisit = function () {
-    SOCIALBROWSER.visitManager.prepareVisits();
-    setTimeout(
-      () => {
-        let v = SOCIALBROWSER.visitManager.randomVisit();
-        if (v) {
-          v = { ...SOCIALBROWSER.visitManager.visitOptions, ...v };
-          let track = SOCIALBROWSER.visitManager.Tracking(v);
-          if ((v.count && v.count < track.count) || track.group_count > 5) {
-            SOCIALBROWSER.visitManager.runFakeVisit();
-          } else {
-            SOCIALBROWSER.visitManager.createFakeVisitWindow(v);
-          }
-        } else {
-          SOCIALBROWSER.visitManager.runFakeVisit();
-        }
-      },
-      SOCIALBROWSER.visitManager.isTest ? 1000 * 5 : 1000 * 60
-    );
+  SOCIALBROWSER.visitManager.tryRunFakeView = function () {
+    let v = SOCIALBROWSER.visitManager.randomVisit();
+    if (v) {
+      v = { ...SOCIALBROWSER.visitManager.visitOptions, ...v };
+      let track = SOCIALBROWSER.visitManager.Tracking(v);
+      if ((v.count && v.count < track.count) || track.group_count > 5) {
+        SOCIALBROWSER.visitManager.tryRunFakeView();
+      } else {
+        SOCIALBROWSER.visitManager.openFakeViewWindow(v);
+        setTimeout(() => {
+          SOCIALBROWSER.visitManager.tryRunFakeView();
+        }, v.timeout + 1000 * 60);
+      }
+    } else {
+      SOCIALBROWSER.visitManager.tryRunFakeView();
+    }
   };
 
-  SOCIALBROWSER.visitManager.runFakeVisit();
-
   SOCIALBROWSER.visitManager.startTime = Date.now();
+  SOCIALBROWSER.visitManager.prepareVisits();
+
+  setTimeout(() => {
+    SOCIALBROWSER.visitManager.tryRunFakeView();
+  }, 1000 * 60 * 5);
   setInterval(() => {
+    SOCIALBROWSER.visitManager.prepareVisits();
     if (Date.now() - SOCIALBROWSER.visitManager.startTime > 1000 * 60 * 60 * 24) {
       SOCIALBROWSER.visitManager.trackingList = [];
       console.clear();
