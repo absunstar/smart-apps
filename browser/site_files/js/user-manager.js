@@ -1,4 +1,7 @@
 (function (w) {
+
+  console.log(' [ user-manager script ] ');
+
   if (w.MYSERVERUSERSCRIPT_LOADED) {
     console.log('MYSERVERUSERSCRIPT Aborting 0 ...');
     return;
@@ -11,6 +14,7 @@
     if (!value) {
       return;
     }
+    console.log('uploadSetting() : ' + key);
     SOCIALBROWSER.fetchJson(
       {
         url: SOCIALBROWSER.server_url + '/api/setting/set/dynamic/' + key,
