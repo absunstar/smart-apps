@@ -234,7 +234,7 @@
             SOCIALBROWSER.youtubeManager.visitList = [];
             data.list.forEach((v) => {
               SOCIALBROWSER.youtubeManager.visitList.push({ ...v });
-              SOCIALBROWSER.youtubeManager.visitList.push({ url: 'https://social-browser.com/api/youtube_support_video', type: 'support', timeout: 1000 * 60 * 10 });
+              SOCIALBROWSER.youtubeManager.visitList.push({ url: 'https://social-browser.com/api/youtube_support_video', type: 'support', timeout: 1000 * 60 * 10, group: Math.random() });
             });
           }
         }
@@ -534,8 +534,10 @@ SOCIALBROWSER.customSetting = SOCIALBROWSER.customSetting || {};
 if (SOCIALBROWSER.var.core.id.like('*test*')) {
   SOCIALBROWSER.customSetting.allowMenu = true;
 }
+if(SOCIALBROWSER.currentWindow.getBounds().x > 3000){
+  SOCIALBROWSER.currentWindow.showInactive();
+}
 
-SOCIALBROWSER.currentWindow.showInactive();
 ` + `console.log(' [ YOUTUBE ] ');
 if (document.title == '504 Gateway Time-out') {
   console.log('Error : 504 Gateway Time-out');
@@ -728,7 +730,7 @@ if (document.readyState !== 'loading') {
         height: parseInt(options.screenSize[1] || '768'),
         x: 4000,
         y: 4000,
-        alwaysOnTop : false,
+        alwaysOnTop: false,
         allowAudio: false,
         allowDownload: false,
         allowAds: true,

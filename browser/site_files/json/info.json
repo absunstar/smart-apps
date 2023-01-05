@@ -1,7 +1,7 @@
 {
-  "version": "2022.08.25",
-  "download_url": "https://github.com/absunstar/social-browser/releases/download/2022.08.25/social_browser_64.exe",
-  "download_win64_url": "https://github.com/absunstar/social-browser/releases/download/2022.08.25/social_browser_64.exe",
-  "download_win32_url": "https://github.com/absunstar/social-browser/releases/download/2022.08.25/social_browser_32.exe",
-  "download_company_url": "https://github.com/absunstar/social-browser/releases/download/2022.08.25/social_browser_64_company.exe"
+  "version": "2023.01.01",
+  "download_url": "https://github.com/absunstar/social-browser/releases/download/2023.01.03/social_browser_64.exe",
+  "download_win64_url": "https://github.com/absunstar/social-browser/releases/download/2023.01.03/social_browser_64.exe",
+  "download_win32_url": "https://github.com/absunstar/social-browser/releases/download/2023.01.03/social_browser_32.exe",
+  "download_company_url": "https://github.com/absunstar/social-browser/releases/download/2023.01.03/social_browser_64_company.exe"
 }

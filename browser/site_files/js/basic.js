@@ -70,7 +70,7 @@
 
     if (w.SOCIALBROWSER) {
         SOCIALBROWSER.is_new = true;
-        SOCIALBROWSER.ip = 'ip';
+        SOCIALBROWSER.ip = '';
         SOCIALBROWSER.scriptList = [];
         (function prepareSOCIALBROWSER() {
             SOCIALBROWSER.electron = SOCIALBROWSER.electron || require('electron');

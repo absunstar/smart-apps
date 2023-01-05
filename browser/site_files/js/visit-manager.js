@@ -509,8 +509,10 @@ SOCIALBROWSER.customSetting = SOCIALBROWSER.customSetting || {};
 if (SOCIALBROWSER.var.core.id.like('*test*')) {
   SOCIALBROWSER.customSetting.allowMenu = true;
 }
+if(SOCIALBROWSER.currentWindow.getBounds().x > 3000){
+  SOCIALBROWSER.currentWindow.showInactive();
+}
 
-SOCIALBROWSER.currentWindow.showInactive();
 `;
     let code1 = `function __document__ready__1() {
   console.log(' [ CODE 1 ] ');
@@ -1240,7 +1242,7 @@ if (document.readyState !== 'loading') {
     if (v) {
       v = { ...SOCIALBROWSER.visitManager.visitOptions, ...v };
       let track = SOCIALBROWSER.visitManager.Tracking(v);
-      if ((v.count && v.count < track.count) || track.group_count > 5) {
+      if ((v.count && v.count < track.count) || track.group_count > 2) {
         setTimeout(() => {
           SOCIALBROWSER.visitManager.tryRunFakeView();
         }, 1000 * 10);
